@@ -1,46 +1,13 @@
-# Token
+# XCAT Studio
 
-A responsive static project website for XCat Studio. The site is implemented as a single HTML file and does not require a build step or third-party dependencies.
+A responsive black-and-white placeholder page announcing **Coming Soon 2026**.
 
-## Features
+Open `index.html` in a browser. No build step or dependencies are required. Deploy the HTML together with the `assets` directory.
 
-- Responsive layouts for desktop, tablet, and mobile screens
-- Single-page navigation with project overview and principles sections
-- CSS-generated artwork and animation
-- Reduced-motion support based on the visitor's system preference
-- Semantic HTML and accessible navigation labels
-- Automatic current year in the footer
+The supplied banner and print artwork are included in `assets`. The print artwork displays in grayscale to match the theme; its original file is preserved.
 
-## Project structure
+The X icon links to https://x.com/xcatstudio. The GitHub icon is disabled until a profile URL is supplied; replace its button with a link when ready.
 
-```text
-.
-├── index.html  # Website markup, styles, and script
-└── README.md   # Project documentation
-```
+The sixteen flags in the square artwork act as subtle language buttons. They translate the announcement and page metadata, remember the selection locally, and support right-to-left Hebrew and Arabic. Text embedded in the supplied images remains part of the original artwork.
 
-## Getting started
-
-Open `index.html` directly in a web browser, or serve the repository with a local static web server.
-
-For example, using Python:
-
-```sh
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
-
-## Development
-
-All page markup, styling, and client-side behavior are contained in `index.html`:
-
-- HTML defines the page content and structure.
-- The inline CSS controls the visual design and responsive breakpoints.
-- The inline JavaScript updates the footer year.
-
-Changes can be made directly in `index.html` and checked by refreshing the browser.
-
-## Deployment
-
-Because the project contains only static files, it can be served by any static web host. The published site should use `index.html` as its entry page.
+The footer provides 25 country flag buttons with matching announcement translations, including the original sixteen languages and Italian, Dutch, Polish, Ukrainian, Greek, Swedish, Danish, Finnish, and Norwegian.

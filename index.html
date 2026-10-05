@@ -3,323 +3,158 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Token is a new project from XCat Studio.">
-  <meta name="theme-color" content="#0b0b0f">
-  <title>Token — XCat Studio</title>
+  <meta name="description" content="XCAT Studio. Coming soon in 2026.">
+  <meta name="theme-color" content="#080808">
+  <title>XCAT Studio — Coming Soon 2026</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b0b0f;
-      --surface: rgba(255, 255, 255, 0.06);
-      --line: rgba(255, 255, 255, 0.12);
-      --text: #f6f3ed;
-      --muted: #aaa6a0;
-      --lime: #c8ff4d;
-      --violet: #9b8cff;
-      --max: 1180px;
-    }
-
+    :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; background: #080808; color: #fff; }
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 82% 12%, rgba(155, 140, 255, 0.18), transparent 30rem),
-        radial-gradient(circle at 10% 80%, rgba(200, 255, 77, 0.10), transparent 34rem),
-        var(--bg);
-    }
-
+    body { margin: 0; }
     a { color: inherit; text-decoration: none; }
-
-    .wrap {
-      width: min(calc(100% - 40px), var(--max));
-      margin-inline: auto;
+    .wrap { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; height: 94px; border-bottom: 1px solid #292929; }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -.05em; }
+    .brand span { margin-left: 7px; font-size: 10px; font-weight: 400; letter-spacing: .25em; }
+    .socials { display: flex; gap: 10px; }
+    .social { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #393939; border-radius: 50%; background: transparent; color: #fff; transition: background .2s, color .2s; }
+    a.social:hover { color: #080808; background: #fff; }
+    .social:focus-visible, .brand:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+    .social svg { width: 17px; height: 17px; fill: currentColor; }
+    .social:disabled { opacity: .5; cursor: default; }
+    .banner { margin: 32px 0 0; border: 1px solid #292929; }
+    .banner img { display: block; width: 100%; height: auto; }
+    .hero { display: grid; grid-template-columns: 1fr 240px; align-items: center; gap: 60px; padding: 64px 0 72px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: #b1b1b1; font: 10px/1.5 monospace; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 6px; height: 6px; background: #fff; border-radius: 50%; }
+    h1 { margin: 0; font-size: clamp(48px, 7.5vw, 98px); line-height: .98; letter-spacing: -.065em; font-weight: 700; }
+    h1 span { display: block; color: #8b8b8b; }
+    .description { margin: 26px 0 0; font-size: 15px; line-height: 1.7; color: #a3a3a3; }
+    .artwork { position: relative; margin: 0; transform: rotate(3deg); }
+    .artwork img { display: block; width: 100%; height: auto; filter: grayscale(1); border: 1px solid #444; }
+    .flag-language { position: absolute; left: var(--x); top: var(--y); width: 16%; height: 16%; transform: translate(-50%, -35%); border: 1px solid transparent; border-radius: 3px; background: transparent; cursor: pointer; }
+    .flag-language:hover { background: rgb(0 0 0 / 5%); border-color: rgb(0 0 0 / 15%); }
+    .flag-language:focus-visible { outline: 2px solid #555; outline-offset: 1px; }
+    .hero-copy { min-width: 0; }
+    .hero-copy[dir="rtl"] { text-align: right; }
+    .hero-copy[dir="rtl"] .eyebrow { justify-content: flex-start; }
+    html:not([lang="en"]) h1 { font-size: clamp(36px, 5.5vw, 72px); line-height: 1.15; letter-spacing: -.035em; overflow-wrap: anywhere; }
+    .artwork figcaption { margin-top: 13px; color: #858585; font: 9px/1.6 monospace; letter-spacing: .13em; text-transform: uppercase; }
+    .languages { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+    .language-button { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #fff; cursor: pointer; font-size: 17px; filter: grayscale(1); opacity: .65; }
+    .language-button:hover, .language-button[aria-pressed="true"] { opacity: 1; border-color: #555; background: #202020; }
+    .language-button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; opacity: 1; }
+    footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0 30px; border-top: 1px solid #292929; color: #858585; font: 10px/1.6 monospace; letter-spacing: .08em; }
+    @media (max-width: 650px) {
+      .wrap { width: calc(100% - 32px); }
+      header { height: 76px; }
+      .banner { margin-top: 20px; }
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 42px 0 48px; }
+      h1 { font-size: clamp(48px, 12vw, 78px); }
+      .artwork { width: 180px; margin-left: auto; margin-right: 8px; }
+      .languages { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+    .language-button { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #fff; cursor: pointer; font-size: 17px; filter: grayscale(1); opacity: .65; }
+    .language-button:hover, .language-button[aria-pressed="true"] { opacity: 1; border-color: #555; background: #202020; }
+    .language-button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; opacity: 1; }
+    footer { flex-wrap: wrap; gap: 8px; }
     }
-
-    header {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 88px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      font-weight: 750;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-mark {
-      display: grid;
-      width: 34px;
-      aspect-ratio: 1;
-      place-items: center;
-      border-radius: 50%;
-      color: #111;
-      background: var(--lime);
-      font-size: 0.8rem;
-      font-weight: 900;
-    }
-
-    nav { display: flex; align-items: center; gap: 28px; }
-
-    nav a {
-      color: var(--muted);
-      font-size: 0.9rem;
-      transition: color 180ms ease;
-    }
-
-    nav a:hover { color: var(--text); }
-
-    .nav-cta {
-      padding: 10px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-    }
-
-    main { position: relative; }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-      align-items: center;
-      gap: clamp(48px, 8vw, 110px);
-      min-height: calc(100vh - 89px);
-      padding-block: 80px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 26px;
-      color: var(--lime);
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: currentColor;
-      box-shadow: 0 0 16px currentColor;
-      content: "";
-    }
-
-    h1 {
-      max-width: 780px;
-      margin: 0;
-      font-size: clamp(4.4rem, 12vw, 9.5rem);
-      line-height: 0.82;
-      letter-spacing: -0.085em;
-    }
-
-    h1 span {
-      display: block;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(246, 243, 237, 0.42);
-    }
-
-    .intro {
-      max-width: 570px;
-      margin: 38px 0 0;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      line-height: 1.65;
-    }
-
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      transition: transform 180ms ease, background 180ms ease;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-    .button.primary { border-color: var(--lime); color: #111; background: var(--lime); }
-    .button.secondary:hover { background: var(--surface); }
-
-    .visual {
-      position: relative;
-      display: grid;
-      aspect-ratio: 1;
-      place-items: center;
-      isolation: isolate;
-    }
-
-    .orb {
-      width: min(100%, 430px);
-      aspect-ratio: 1;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.9) 0 1%, transparent 4%),
-        radial-gradient(circle at 35% 30%, var(--violet), #392a64 28%, #15131d 62%, #09090d 73%);
-      box-shadow: inset -32px -22px 70px #050507, 0 38px 100px rgba(106, 83, 255, 0.2);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .orbit {
-      position: absolute;
-      width: 112%;
-      height: 38%;
-      border: 1px solid rgba(200, 255, 77, 0.5);
-      border-radius: 50%;
-      transform: rotate(-17deg);
-      box-shadow: 0 0 30px rgba(200, 255, 77, 0.08);
-      z-index: -1;
-    }
-
-    .tag {
-      position: absolute;
-      right: 0;
-      bottom: 13%;
-      padding: 13px 17px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      color: var(--muted);
-      background: rgba(11, 11, 15, 0.72);
-      backdrop-filter: blur(14px);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .feature { padding: 42px 34px; }
-    .feature + .feature { border-left: 1px solid var(--line); }
-    .feature-number { color: var(--lime); font: 700 0.72rem/1 monospace; }
-    .feature h2 { margin: 22px 0 10px; font-size: 1.25rem; letter-spacing: -0.03em; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.94rem; line-height: 1.6; }
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 130px;
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(-2deg); }
-      50% { transform: translateY(-16px) rotate(2deg); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .orb { animation: none; }
-      .button { transition: none; }
-    }
-
-    @media (max-width: 780px) {
-      .wrap { width: min(calc(100% - 28px), var(--max)); }
-      header { min-height: 72px; }
-      nav a:not(.nav-cta) { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 70px 80px; }
-      h1 { font-size: clamp(4.1rem, 24vw, 7.4rem); }
-      .visual { width: min(88vw, 430px); margin: 10px auto 0; }
-      .features { grid-template-columns: 1fr; }
-      .feature { padding: 34px 20px; }
-      .feature + .feature { border-top: 1px solid var(--line); border-left: 0; }
-    }
-
-    @media (max-width: 460px) {
-      .actions { flex-direction: column; }
-      .button { width: 100%; }
-      footer { align-items: flex-start; flex-direction: column; justify-content: center; }
-    }
+    @media (prefers-reduced-motion: reduce) { .social { transition: none; } }
   </style>
 </head>
 <body>
-  <header class="wrap">
-    <a class="brand" href="#top" aria-label="Token home">
-      <span class="brand-mark">T</span>
-      <span>Token</span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#principles">Principles</a>
-      <a class="nav-cta" href="mailto:hello@xcatstudio.com">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div>
-        <div class="eyebrow">An XCat Studio project</div>
-        <h1 id="hero-title">Token<span>Project</span></h1>
-        <p class="intro" id="about">
-          A focused digital experience built around clarity, utility, and thoughtful design. More details are coming soon.
-        </p>
-        <div class="actions">
-          <a class="button primary" href="mailto:hello@xcatstudio.com">Get in touch&nbsp; ↗</a>
-          <a class="button secondary" href="#principles">Explore the project</a>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./" aria-label="XCAT Studio home">XCAT<span>STUDIO</span></a>
+      <nav class="socials" aria-label="Social links">
+        <button class="social" type="button" disabled aria-label="GitHub profile coming soon" title="GitHub profile coming soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.8 10.8 0 0 1 5.63 0c2.15-1.46 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg>
+        </button>
+        <a class="social" href="https://x.com/xcatstudio" target="_blank" rel="noopener noreferrer" aria-label="XCAT Studio on X" title="Follow @xcatstudio on X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-7.4L5.6 22H2.5l7.9-9.03L2.8 2h6.4l4.42 6.75L18.9 2Zm-1.09 18h1.72L8.27 3.9H6.43L17.81 20Z"/></svg>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <figure class="banner"><img src="assets/banner.png" width="2172" height="724" alt="XCAT Studio space artwork: Cats rule everything around me. Every cat has a story."></figure>
+      <section class="hero" aria-labelledby="coming-soon">
+        <div class="hero-copy" aria-live="polite">
+          <p class="eyebrow" id="construction">Under Construction</p>
+          <h1 id="coming-soon"><span id="headline" style="color: inherit">Coming Soon</span><span>2026</span></h1>
         </div>
-      </div>
-
-      <div class="visual" aria-hidden="true">
-        <div class="orbit"></div>
-        <div class="orb"></div>
-        <div class="tag">Built with intention</div>
-      </div>
-    </section>
-
-    <section class="features wrap" id="principles" aria-label="Project principles">
-      <article class="feature">
-        <span class="feature-number">01</span>
-        <h2>Clear by design</h2>
-        <p>Every detail has a purpose, from the first interaction to the last.</p>
-      </article>
-      <article class="feature">
-        <span class="feature-number">02</span>
-        <h2>Made to adapt</h2>
-        <p>A flexible foundation designed to work beautifully across every screen.</p>
-      </article>
-      <article class="feature">
-        <span class="feature-number">03</span>
-        <h2>Ready to evolve</h2>
-        <p>A project with room to grow as the idea and its community take shape.</p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="wrap">
-    <span>© <span id="year"></span> XCat Studio</span>
-    <span>Independent ideas, thoughtfully made.</span>
-  </footer>
-
+        <!-- Invisible hotspots follow the 16 flags in the supplied artwork. -->
+        <figure class="artwork">
+          <img src="assets/pfp.png" width="1254" height="1254" alt="XCAT Studio print artwork featuring a large X and cat image placeholders in sixteen languages.">
+          <button class="flag-language" type="button" data-language="en" style="--x: 24.4%; --y: 21.8%" aria-label="English" title="English" aria-pressed="true"></button>
+          <button class="flag-language" type="button" data-language="es" style="--x: 41.2%; --y: 21.8%" aria-label="Español" title="Español" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="pt" style="--x: 58.6%; --y: 21.8%" aria-label="Português" title="Português" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="fr" style="--x: 75.4%; --y: 21.8%" aria-label="Français" title="Français" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="de" style="--x: 24.4%; --y: 38.5%" aria-label="Deutsch" title="Deutsch" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="zh" style="--x: 41.2%; --y: 38.5%" aria-label="中文" title="中文" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="ja" style="--x: 58.6%; --y: 38.5%" aria-label="日本語" title="日本語" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="ko" style="--x: 75.4%; --y: 38.5%" aria-label="한국어" title="한국어" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="he" style="--x: 24.4%; --y: 54%" aria-label="עברית" title="עברית" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="hy" style="--x: 41.2%; --y: 54%" aria-label="Հայերեն" title="Հայերեն" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="tr" style="--x: 58.6%; --y: 54%" aria-label="Türkçe" title="Türkçe" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="ar" style="--x: 75.4%; --y: 54%" aria-label="العربية" title="العربية" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="ru" style="--x: 24.4%; --y: 69.5%" aria-label="Русский" title="Русский" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="hi" style="--x: 41.2%; --y: 69.5%" aria-label="हिन्दी" title="हिन्दी" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="vi" style="--x: 58.6%; --y: 69.5%" aria-label="Tiếng Việt" title="Tiếng Việt" aria-pressed="false"></button>
+          <button class="flag-language" type="button" data-language="id" style="--x: 75.4%; --y: 69.5%" aria-label="Bahasa Indonesia" title="Bahasa Indonesia" aria-pressed="false"></button>
+        </figure>
+      </section>
+    </main>
+    <footer>
+      <span>© 2026 XCAT Studio</span>
+      <!-- Visible language controls; keep the original artwork unchanged. -->
+      <nav class="languages" aria-label="Language">
+        <button class="language-button" type="button" data-language="en" aria-label="English" title="English" aria-pressed="true"><span aria-hidden="true">🇺🇸</span></button>
+        <button class="language-button" type="button" data-language="es" aria-label="Español" title="Español" aria-pressed="false"><span aria-hidden="true">🇪🇸</span></button>
+        <button class="language-button" type="button" data-language="pt" aria-label="Português" title="Português" aria-pressed="false"><span aria-hidden="true">🇧🇷</span></button>
+        <button class="language-button" type="button" data-language="fr" aria-label="Français" title="Français" aria-pressed="false"><span aria-hidden="true">🇫🇷</span></button>
+        <button class="language-button" type="button" data-language="de" aria-label="Deutsch" title="Deutsch" aria-pressed="false"><span aria-hidden="true">🇩🇪</span></button>
+        <button class="language-button" type="button" data-language="zh" aria-label="中文" title="中文" aria-pressed="false"><span aria-hidden="true">🇨🇳</span></button>
+        <button class="language-button" type="button" data-language="ja" aria-label="日本語" title="日本語" aria-pressed="false"><span aria-hidden="true">🇯🇵</span></button>
+        <button class="language-button" type="button" data-language="ko" aria-label="한국어" title="한국어" aria-pressed="false"><span aria-hidden="true">🇰🇷</span></button>
+        <button class="language-button" type="button" data-language="he" aria-label="עברית" title="עברית" aria-pressed="false"><span aria-hidden="true">🇮🇱</span></button>
+        <button class="language-button" type="button" data-language="hy" aria-label="Հայերեն" title="Հայերեն" aria-pressed="false"><span aria-hidden="true">🇦🇲</span></button>
+        <button class="language-button" type="button" data-language="tr" aria-label="Türkçe" title="Türkçe" aria-pressed="false"><span aria-hidden="true">🇹🇷</span></button>
+        <button class="language-button" type="button" data-language="ar" aria-label="العربية" title="العربية" aria-pressed="false"><span aria-hidden="true">🇸🇦</span></button>
+        <button class="language-button" type="button" data-language="ru" aria-label="Русский" title="Русский" aria-pressed="false"><span aria-hidden="true">🇷🇺</span></button>
+        <button class="language-button" type="button" data-language="hi" aria-label="हिन्दी" title="हिन्दी" aria-pressed="false"><span aria-hidden="true">🇮🇳</span></button>
+        <button class="language-button" type="button" data-language="vi" aria-label="Tiếng Việt" title="Tiếng Việt" aria-pressed="false"><span aria-hidden="true">🇻🇳</span></button>
+        <button class="language-button" type="button" data-language="id" aria-label="Bahasa Indonesia" title="Bahasa Indonesia" aria-pressed="false"><span aria-hidden="true">🇮🇩</span></button>
+        <button class="language-button" type="button" data-language="it" aria-label="Italiano" title="Italiano" aria-pressed="false"><span aria-hidden="true">🇮🇹</span></button>
+        <button class="language-button" type="button" data-language="nl" aria-label="Nederlands" title="Nederlands" aria-pressed="false"><span aria-hidden="true">🇳🇱</span></button>
+        <button class="language-button" type="button" data-language="pl" aria-label="Polski" title="Polski" aria-pressed="false"><span aria-hidden="true">🇵🇱</span></button>
+        <button class="language-button" type="button" data-language="uk" aria-label="Українська" title="Українська" aria-pressed="false"><span aria-hidden="true">🇺🇦</span></button>
+        <button class="language-button" type="button" data-language="el" aria-label="Ελληνικά" title="Ελληνικά" aria-pressed="false"><span aria-hidden="true">🇬🇷</span></button>
+        <button class="language-button" type="button" data-language="sv" aria-label="Svenska" title="Svenska" aria-pressed="false"><span aria-hidden="true">🇸🇪</span></button>
+        <button class="language-button" type="button" data-language="da" aria-label="Dansk" title="Dansk" aria-pressed="false"><span aria-hidden="true">🇩🇰</span></button>
+        <button class="language-button" type="button" data-language="fi" aria-label="Suomi" title="Suomi" aria-pressed="false"><span aria-hidden="true">🇫🇮</span></button>
+        <button class="language-button" type="button" data-language="no" aria-label="Norsk" title="Norsk" aria-pressed="false"><span aria-hidden="true">🇳🇴</span></button>
+      </nav>
+    </footer>
+  </div>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const translations = {"en": {"construction": "Under Construction", "soon": "Coming Soon"}, "es": {"construction": "En construcción", "soon": "Próximamente"}, "pt": {"construction": "Em construção", "soon": "Em breve"}, "fr": {"construction": "En construction", "soon": "Bientôt disponible"}, "de": {"construction": "Im Aufbau", "soon": "Demnächst"}, "zh": {"construction": "建设中", "soon": "即将上线"}, "ja": {"construction": "準備中", "soon": "近日公開"}, "ko": {"construction": "준비 중", "soon": "곧 공개됩니다"}, "he": {"construction": "בבנייה", "soon": "בקרוב"}, "hy": {"construction": "Կառուցման փուլում", "soon": "Շուտով"}, "tr": {"construction": "Yapım aşamasında", "soon": "Çok yakında"}, "ar": {"construction": "قيد الإنشاء", "soon": "قريبًا"}, "ru": {"construction": "В разработке", "soon": "Скоро"}, "hi": {"construction": "निर्माणाधीन", "soon": "जल्द आ रहा है"}, "vi": {"construction": "Đang xây dựng", "soon": "Sắp ra mắt"}, "id": {"construction": "Dalam pengembangan", "soon": "Segera hadir"}, "it": {"construction": "In costruzione", "soon": "Prossimamente"}, "nl": {"construction": "In aanbouw", "soon": "Binnenkort"}, "pl": {"construction": "W budowie", "soon": "Już wkrótce"}, "uk": {"construction": "У розробці", "soon": "Незабаром"}, "el": {"construction": "Υπό κατασκευή", "soon": "Σύντομα"}, "sv": {"construction": "Under uppbyggnad", "soon": "Kommer snart"}, "da": {"construction": "Under opbygning", "soon": "Kommer snart"}, "fi": {"construction": "Rakenteilla", "soon": "Tulossa pian"}, "no": {"construction": "Under oppbygging", "soon": "Kommer snart"}};
+    // Update live text and metadata; translations never modify image assets.
+    function setLanguage(language) {
+      const copy = translations[language];
+      if (!copy) return;
+      document.documentElement.lang = language;
+      document.querySelector('.hero-copy').dir = ['ar', 'he'].includes(language) ? 'rtl' : 'ltr';
+      document.getElementById('construction').textContent = copy.construction;
+      document.getElementById('headline').textContent = copy.soon;
+      document.title = `XCAT Studio — ${copy.soon} 2026`;
+      document.querySelector('meta[name="description"]').content = `XCAT Studio. ${copy.soon} 2026.`;
+      document.querySelectorAll('[data-language]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === language));
+      });
+      try { localStorage.setItem('xcat-language', language); } catch {}
+    }
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+    try { setLanguage(localStorage.getItem('xcat-language') || 'en'); } catch { setLanguage('en'); }
   </script>
 </body>
 </html>
