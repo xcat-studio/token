@@ -6,7 +6,7 @@ Open `index.html` in a browser. No build step or dependencies are required. Depl
 
 The supplied banner and print artwork are included in `assets`. The print artwork displays in grayscale to match the theme; its original file is preserved.
 
-The X icon links to https://x.com/xcatstudio. The GitHub icon is disabled until a profile URL is supplied; replace its button with a link when ready.
+The X icon links to https://x.com/xcatstudio. The GitHub icon links to https://github.com/xcat-studio.
 
 The sixteen flags in the square artwork act as subtle language buttons. They translate the announcement and page metadata, remember the selection locally, and support right-to-left Hebrew and Arabic. Text embedded in the supplied images remains part of the original artwork.
 
