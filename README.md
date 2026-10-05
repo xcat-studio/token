@@ -1,7 +1,7 @@
 # Token
 
-Token project for XCat Studio.
+Responsive static project website for XCat Studio.
 
 ## Getting started
 
-Project setup and usage instructions will be added as development progresses.
+Open `index.html` in a browser. No build step or dependencies are required.
