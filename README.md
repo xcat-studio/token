@@ -1,6 +1,6 @@
 # XCAT Studio
 
-A responsive black-and-white placeholder page announcing **Coming Soon 2026**.
+A responsive black-and-white website announcing **Coming Soon 2026** and providing cat story submission instructions.
 
 Open `index.html` in a browser. No build step or dependencies are required. Deploy the HTML together with the `assets` directory.
 
@@ -11,3 +11,37 @@ The X icon links to https://x.com/xcatstudio. The GitHub icon links to https://g
 The sixteen flags in the square artwork act as subtle language buttons. They translate the announcement and page metadata, remember the selection locally, and support right-to-left Hebrew and Arabic. Text embedded in the supplied images remains part of the original artwork.
 
 The footer provides 25 country flag buttons with matching announcement translations, including the original sixteen languages and Italian, Dutch, Polish, Ukrainian, Greek, Swedish, Danish, Finnish, and Norwegian.
+
+## XCAT Studio — Submit Your Cat Story
+
+**Every cat has a story. Tell yours.**
+
+To submit your cat story to XCAT Studio, follow these instructions:
+
+1. **Replace X with your cat's name.** Use the XCAT Studio image template and replace the placeholder X with your cat's name.
+2. **Post on X.** Publish a post on [x.com](https://x.com/) featuring your cat's image and **tag @xcatstudio** in the post.
+3. **Copy your post link.** Include the direct URL to your published X post.
+4. **Write your cat's story.** Tell us your story using Unicode plain text.
+5. **Email your submission** to [**support@xcatstudio.com**](mailto:support@xcatstudio.com) with the subject line: `XCAT Story Submission — [Cat's Name]`
+
+### Email Format
+
+```text
+Cat's Name:
+X Post URL:
+Cat Story:
+```
+
+### Submission Requirements
+
+- Plain text only (Unicode UTF-8).
+- No HTML formatting.
+- No attachments or binary data.
+- The X post must include your cat's image and tag **@xcatstudio**.
+- Include the complete story directly in the email body.
+
+**Every cat has a story.**
+
+XCAT Studio\
+[xcatstudio.com](https://xcatstudio.com/)\
+[@xcatstudio](https://x.com/xcatstudio)

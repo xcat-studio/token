@@ -41,6 +41,18 @@
     .hero-copy[dir="rtl"] .eyebrow { justify-content: flex-start; }
     html:not([lang="en"]) h1 { font-size: clamp(36px, 5.5vw, 72px); line-height: 1.15; letter-spacing: -.035em; overflow-wrap: anywhere; }
     .artwork figcaption { margin-top: 13px; color: #858585; font: 9px/1.6 monospace; letter-spacing: .13em; text-transform: uppercase; }
+    /* Keep submission copy readable on small screens and long email subjects wrapped. */
+    .submission { padding: 48px 0 56px; border-top: 1px solid #292929; font-size: 15px; line-height: 1.75; }
+    .submission h2 { margin: 0 0 16px; font-size: clamp(28px, 4vw, 44px); line-height: 1.15; letter-spacing: -.04em; }
+    .submission h3 { margin: 28px 0 12px; font-size: 19px; }
+    .submission p, .submission ol, .submission ul { max-width: 760px; }
+    .submission ol, .submission ul { padding-left: 24px; color: #b1b1b1; }
+    .submission li { margin-bottom: 12px; }
+    .submission strong { color: #fff; }
+    .submission a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+    .submission a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+    .submission code { white-space: normal; overflow-wrap: anywhere; }
+    .email-format { padding: 20px 24px; border: 1px solid #393939; background: #111; font-family: monospace; }
     .languages { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
     .language-button { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #fff; cursor: pointer; font-size: 17px; filter: grayscale(1); opacity: .65; }
     .language-button:hover, .language-button[aria-pressed="true"] { opacity: 1; border-color: #555; background: #202020; }
@@ -105,6 +117,32 @@
           <button class="flag-language" type="button" data-language="vi" style="--x: 58.6%; --y: 69.5%" aria-label="Việt Nam — Tiếng Việt" title="Việt Nam" aria-pressed="false"></button>
           <button class="flag-language" type="button" data-language="id" style="--x: 75.4%; --y: 69.5%" aria-label="Indonesia — Bahasa Indonesia" title="Indonesia" aria-pressed="false"></button>
         </figure>
+      </section>
+      <!-- Submission instructions stay in English while the announcement language changes.
+           Keep these steps and requirements in sync with README.md. -->
+      <section class="submission" id="submit-your-cat-story" lang="en" aria-labelledby="submission-title">
+        <h2 id="submission-title">XCAT Studio — Submit Your Cat Story</h2>
+        <p><strong>Every cat has a story. Tell yours.</strong></p>
+        <p>To submit your cat story to XCAT Studio, follow these instructions:</p>
+        <ol>
+          <li><strong>Replace X with your cat's name.</strong> Use the XCAT Studio image template and replace the placeholder X with your cat's name.</li>
+          <li><strong>Post on X.</strong> Publish a post on <a href="https://x.com/">x.com</a> featuring your cat's image and <strong>tag @xcatstudio</strong> in the post.</li>
+          <li><strong>Copy your post link.</strong> Include the direct URL to your published X post.</li>
+          <li><strong>Write your cat's story.</strong> Tell us your story using Unicode plain text.</li>
+          <li><strong>Email your submission</strong> to <a href="mailto:support@xcatstudio.com"><strong>support@xcatstudio.com</strong></a> with the subject line: <code>XCAT Story Submission — [Cat's Name]</code></li>
+        </ol>
+        <h3>Email Format</h3>
+        <p class="email-format"><strong>Cat's Name:</strong><br><strong>X Post URL:</strong><br><strong>Cat Story:</strong></p>
+        <h3>Submission Requirements</h3>
+        <ul>
+          <li>Plain text only (Unicode UTF-8).</li>
+          <li>No HTML formatting.</li>
+          <li>No attachments or binary data.</li>
+          <li>The X post must include your cat's image and tag <strong>@xcatstudio</strong>.</li>
+          <li>Include the complete story directly in the email body.</li>
+        </ul>
+        <p><strong>Every cat has a story.</strong></p>
+        <p>XCAT Studio<br><a href="https://xcatstudio.com/">xcatstudio.com</a><br><a href="https://x.com/xcatstudio">@xcatstudio</a></p>
       </section>
     </main>
     <footer>
