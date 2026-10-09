@@ -15,8 +15,8 @@
   <meta property="og:description" content="XCAT Studio — Every cat has a story. Coming Soon 2026. Follow XCAT Studio on X, GitHub, and pump.fun for updates.">
   <meta property="og:image" content="https://xcatstudio.com/assets/banner.png">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="2172">
-  <meta property="og:image:height" content="724">
+  <meta property="og:image:width" content="2170">
+  <meta property="og:image:height" content="725">
   <meta property="og:image:alt" content="XCAT Studio space artwork: Cats rule everything around me. Every cat has a story.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@xcatstudio">
@@ -62,6 +62,17 @@
     .hero-copy[dir="rtl"] { text-align: right; }
     .hero-copy[dir="rtl"] .eyebrow { justify-content: flex-start; }
     html:not([lang="en"]) h1 { font-size: clamp(36px, 5.5vw, 72px); line-height: 1.15; letter-spacing: -.035em; overflow-wrap: anywhere; }
+    .template-image { position: relative; }
+    .template-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+    .template-open:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+    .template-dialog { width: min(520px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 24px; border: 1px solid #444; border-radius: 16px; background: #111; color: #fff; }
+    .template-dialog::backdrop { background: rgb(0 0 0 / 80%); }
+    .template-dialog h2 { margin: 0 40px 12px 0; font-size: 24px; letter-spacing: -.03em; }
+    .template-dialog p { color: #b1b1b1; font-size: 15px; line-height: 1.6; }
+    .template-dialog img { display: block; width: 100%; height: auto; margin: 20px 0; }
+    .template-close { position: absolute; top: 16px; right: 16px; border: 1px solid #444; border-radius: 50%; width: 32px; height: 32px; background: transparent; color: #fff; font-size: 22px; cursor: pointer; }
+    .template-download { display: inline-block; padding: 12px 18px; border-radius: 24px; background: #fff; color: #080808; font-size: 14px; font-weight: 700; }
+    .template-close:focus-visible, .template-download:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
     .artwork figcaption { margin-top: 13px; color: #858585; font: 9px/1.6 monospace; letter-spacing: .13em; text-transform: uppercase; }
     .languages { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
     .language-button { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #fff; cursor: pointer; font-size: 17px; filter: grayscale(1); opacity: .65; }
@@ -108,7 +119,7 @@
       </nav>
     </header>
     <main>
-      <figure class="banner"><img src="assets/banner.png" width="2172" height="724" alt="XCAT Studio space artwork: Cats rule everything around me. Every cat has a story."></figure>
+      <figure class="banner"><img src="assets/banner.png" width="2170" height="725" alt="XCAT Studio space artwork: Cats rule everything around me. Every cat has a story."></figure>
       <section class="hero" aria-labelledby="coming-soon">
         <div class="hero-copy" aria-live="polite">
           <p class="eyebrow" id="construction">Under Construction</p>
@@ -116,7 +127,11 @@
         </div>
         <!-- Invisible hotspots follow the 16 flags in the supplied artwork. -->
         <figure class="artwork">
-          <img src="assets/pfp.png" width="1254" height="1254" alt="XCAT Studio print artwork featuring a large X and cat image placeholders in sixteen languages.">
+          <div class="template-image">
+            <!-- Flag buttons overlay the template and keep their independent language actions. -->
+            <button class="template-open" type="button" aria-haspopup="dialog" aria-controls="template-dialog" aria-label="Preview and download the cat image template" title="Download the cat image template">
+              <img src="assets/pfp.png" width="1254" height="1254" alt="XCAT Studio print artwork featuring a large X and cat image placeholders in sixteen languages.">
+            </button>
           <button class="flag-language" type="button" data-language="en" style="--x: 24.4%; --y: 21.8%" aria-label="United States — English" title="United States" aria-pressed="true"></button>
           <button class="flag-language" type="button" data-language="es" style="--x: 41.2%; --y: 21.8%" aria-label="España — Español" title="España" aria-pressed="false"></button>
           <button class="flag-language" type="button" data-language="pt" style="--x: 58.6%; --y: 21.8%" aria-label="Brasil — Português" title="Brasil" aria-pressed="false"></button>
@@ -133,9 +148,18 @@
           <button class="flag-language" type="button" data-language="hi" style="--x: 41.2%; --y: 69.5%" aria-label="भारत — हिन्दी" title="भारत" aria-pressed="false"></button>
           <button class="flag-language" type="button" data-language="vi" style="--x: 58.6%; --y: 69.5%" aria-label="Việt Nam — Tiếng Việt" title="Việt Nam" aria-pressed="false"></button>
           <button class="flag-language" type="button" data-language="id" style="--x: 75.4%; --y: 69.5%" aria-label="Indonesia — Bahasa Indonesia" title="Indonesia" aria-pressed="false"></button>
+          </div>
+          <figcaption>Click the image to download the template.</figcaption>
         </figure>
       </section>
     </main>
+    <dialog class="template-dialog" id="template-dialog" aria-labelledby="template-title" aria-describedby="template-instructions">
+      <button class="template-close" type="button" aria-label="Close template preview" autofocus>×</button>
+      <h2 id="template-title">Make it your cat's story.</h2>
+      <p id="template-instructions">Download the template and replace X with your cat's image. Save your finished image, post it on X, and tag <strong>@xcatstudio</strong>.</p>
+      <img src="assets/pfp.png" width="1254" height="1254" alt="Full-color XCAT Studio cat image template." loading="lazy">
+      <a class="template-download" href="assets/pfp.png" download="xcat-studio-cat-template.png">Download template · PNG</a>
+    </dialog>
     <footer>
       <span>All rights reserved.</span>
       <a class="deployed-commit" data-latest-commit href="https://github.com/xcat-studio/token/commits/main/" aria-live="polite">Checking latest commit…</a>
@@ -170,6 +194,15 @@
     </footer>
   </div>
   <script>
+    // Native dialog supports keyboard focus trapping and Escape to close.
+    const templateDialog = document.getElementById('template-dialog');
+    document.querySelector('.template-open').addEventListener('click', () => templateDialog.showModal());
+    document.querySelector('.template-close').addEventListener('click', () => templateDialog.close());
+    // Backdrop clicks close the preview; clicks inside the dialog do not.
+    templateDialog.addEventListener('click', event => {
+      const bounds = templateDialog.getBoundingClientRect();
+      if (event.target === templateDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) templateDialog.close();
+    });
     const translations = {"en": {"construction": "Under Construction", "soon": "Coming Soon"}, "es": {"construction": "En construcción", "soon": "Próximamente"}, "pt": {"construction": "Em construção", "soon": "Em breve"}, "fr": {"construction": "En construction", "soon": "Bientôt disponible"}, "de": {"construction": "Im Aufbau", "soon": "Demnächst"}, "zh": {"construction": "建设中", "soon": "即将上线"}, "ja": {"construction": "準備中", "soon": "近日公開"}, "ko": {"construction": "준비 중", "soon": "곧 공개됩니다"}, "he": {"construction": "בבנייה", "soon": "בקרוב"}, "hy": {"construction": "Կառուցման փուլում", "soon": "Շուտով"}, "tr": {"construction": "Yapım aşamasında", "soon": "Çok yakında"}, "ar": {"construction": "قيد الإنشاء", "soon": "قريبًا"}, "ru": {"construction": "В разработке", "soon": "Скоро"}, "hi": {"construction": "निर्माणाधीन", "soon": "जल्द आ रहा है"}, "vi": {"construction": "Đang xây dựng", "soon": "Sắp ra mắt"}, "id": {"construction": "Dalam pengembangan", "soon": "Segera hadir"}, "it": {"construction": "In costruzione", "soon": "Prossimamente"}, "nl": {"construction": "In aanbouw", "soon": "Binnenkort"}, "pl": {"construction": "W budowie", "soon": "Już wkrótce"}, "uk": {"construction": "У розробці", "soon": "Незабаром"}, "el": {"construction": "Υπό κατασκευή", "soon": "Σύντομα"}, "sv": {"construction": "Under uppbyggnad", "soon": "Kommer snart"}, "da": {"construction": "Under opbygning", "soon": "Kommer snart"}, "fi": {"construction": "Rakenteilla", "soon": "Tulossa pian"}, "no": {"construction": "Under oppbygging", "soon": "Kommer snart"}};
     // Update live text and metadata; translations never modify image assets.
     function setLanguage(language) {

@@ -8,7 +8,7 @@ The supplied banner and print artwork are included in `assets`. The print artwor
 
 The X icon links to https://x.com/xcatstudio. The GitHub icon links to https://github.com/xcat-studio. The pump.fun pill icon links to https://pump.fun/profile/xcatstudio; its SVG is sourced from https://pump.fun/pump-logomark.svg and stored locally in `assets`.
 
-The sixteen flags in the square artwork act as subtle language buttons. They translate the announcement and page metadata, remember the selection locally, and support right-to-left Hebrew and Arabic. Text embedded in the supplied images remains part of the original artwork.
+Clicking the square artwork opens a full-color template preview with a PNG download and instructions to replace X with your cat’s image. The sixteen flags in the square artwork act as subtle language buttons. They translate the announcement and page metadata, remember the selection locally, and support right-to-left Hebrew and Arabic. Text embedded in the supplied images remains part of the original artwork.
 
 The footer provides 25 country flag buttons with matching announcement translations, including the original sixteen languages and Italian, Dutch, Polish, Ukrainian, Greek, Swedish, Danish, Finnish, and Norwegian.
 
