@@ -14,7 +14,7 @@ The footer provides 25 country flag buttons with matching announcement translati
 
 ## XCAT Studio — Submit Your Cat Story
 
-**Every cat has a story. Tell it.**
+**Every cat has a story.**
 
 To submit a cat story to XCAT Studio, follow these instructions:
 
