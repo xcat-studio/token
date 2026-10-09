@@ -2,7 +2,7 @@
 
 A responsive black-and-white website announcing **Coming Soon 2026** and providing cat story submission instructions.
 
-Open `index.html` in a browser. No build step or dependencies are required. Deploy `index.html`, `publish.html`, and `investor-relations.html` together with the `assets` directory. The top navigation’s **Publish** link opens the dedicated submission page. **Investor Relations** opens the company overview, strategy, corporate contacts, and important investor information.
+Open `index.html` in a browser. No build step or dependencies are required. Deploy `index.html`, `publish.html`, and `investor-relations.html` together with the `assets` directory. The top navigation’s **Publish** link opens the dedicated submission page. **Investors** opens the company overview, strategy, corporate contacts, and important investor information.
 
 The supplied banner and print artwork are included in `assets`. The print artwork displays in grayscale to match the theme; its original file is preserved.
 
