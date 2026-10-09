@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Publish a cat story with XCAT Studio. Follow the submission instructions and email the complete story to support@xcatstudio.com.">
+  <!-- Populated by latest-commit.js after verifying GitHub checks. -->
+  <meta name="latest-successful-commit" content="">
   <meta name="theme-color" content="#080808">
   <link rel="canonical" href="https://xcatstudio.com/publish.html">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg?v=xcat">
@@ -39,7 +41,7 @@
     .submission a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
     .submission code { white-space: normal; overflow-wrap: anywhere; }
     .email-format { padding: 20px 24px; border: 1px solid #393939; background: #111; font-family: monospace; }
-    footer { padding: 24px 0 30px; border-top: 1px solid #292929; color: #858585; font: 10px/1.6 monospace; }
+    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding: 24px 0 30px; border-top: 1px solid #292929; color: #858585; font: 10px/1.6 monospace; }
     /* Let the brand and navigation wrap so Publish stays accessible on narrow screens. */
     @media (max-width: 650px) {
       .wrap { width: calc(100% - 32px); }
@@ -47,6 +49,9 @@
       .socials { flex-wrap: wrap; }
       .submission { padding: 32px 0 40px; }
     }
+    .deployed-commit { color: #858585; font: 10px/1.6 monospace; overflow-wrap: anywhere; }
+    .deployed-commit:hover { color: #fff; text-decoration: underline; }
+    .deployed-commit:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
     @media (prefers-reduced-motion: reduce) { .social { transition: none; } }
   </style>
 </head>
@@ -56,6 +61,7 @@
       <a class="brand" href="./" aria-label="XCAT Studio home">XCAT<span>STUDIO</span></a>
       <nav class="socials" aria-label="Main navigation">
         <a class="publish-link" href="publish.html" aria-current="page">Publish</a>
+        <a class="publish-link" href="investor-relations.html">Investor Relations</a>
         <a class="social" href="https://github.com/xcat-studio" target="_blank" rel="noopener noreferrer" aria-label="XCAT Studio on GitHub" title="XCAT Studio on GitHub">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.8 10.8 0 0 1 5.63 0c2.15-1.46 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg>
         </a>
@@ -95,7 +101,9 @@
         <p>XCAT Studio<br><a href="https://xcatstudio.com/">xcatstudio.com</a><br><a href="https://x.com/xcatstudio">@xcatstudio</a></p>
       </section>
     </main>
-    <footer><a href="./">Back to XCAT Studio</a></footer>
+    <footer><a href="./">Back to XCAT Studio</a> <a class="deployed-commit" data-latest-commit href="https://github.com/xcat-studio/token/commits/main/" aria-live="polite">Checking latest commit…</a></footer>
   </div>
+  <!-- Share the latest passing main commit lookup across all site pages. -->
+  <script src="assets/latest-commit.js" defer></script>
 </body>
 </html>

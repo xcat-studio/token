@@ -3,8 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="XCAT Studio. Coming soon in 2026.">
+  <meta name="description" content="XCAT Studio — Every cat has a story. Coming Soon 2026. Follow XCAT Studio on X, GitHub, and pump.fun for updates.">
+  <!-- Populated by latest-commit.js after verifying GitHub checks. -->
+  <meta name="latest-successful-commit" content="">
   <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://xcatstudio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="XCAT Studio">
+  <meta property="og:url" content="https://xcatstudio.com/">
+  <meta property="og:title" content="XCAT Studio — Coming Soon 2026">
+  <meta property="og:description" content="XCAT Studio — Every cat has a story. Coming Soon 2026. Follow XCAT Studio on X, GitHub, and pump.fun for updates.">
+  <meta property="og:image" content="https://xcatstudio.com/assets/banner.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="2172">
+  <meta property="og:image:height" content="724">
+  <meta property="og:image:alt" content="XCAT Studio space artwork: Cats rule everything around me. Every cat has a story.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@xcatstudio">
+  <meta name="twitter:title" content="XCAT Studio — Coming Soon 2026">
+  <meta name="twitter:description" content="XCAT Studio — Every cat has a story. Coming Soon 2026. Follow XCAT Studio on X, GitHub, and pump.fun for updates.">
+  <meta name="twitter:image" content="https://xcatstudio.com/assets/banner.png">
+  <meta name="twitter:image:alt" content="XCAT Studio space artwork: Cats rule everything around me. Every cat has a story.">
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg?v=xcat">
   <title>XCAT Studio — Coming Soon 2026</title>
   <style>
@@ -63,6 +82,9 @@
     .language-button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; opacity: 1; }
     footer { flex-wrap: wrap; gap: 8px; }
     }
+    .deployed-commit { color: #858585; font: 10px/1.6 monospace; overflow-wrap: anywhere; }
+    .deployed-commit:hover { color: #fff; text-decoration: underline; }
+    .deployed-commit:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
     @media (prefers-reduced-motion: reduce) { .social { transition: none; } }
   </style>
 </head>
@@ -73,6 +95,7 @@
       <nav class="socials" aria-label="Main navigation">
         <!-- Publish opens the dedicated cat story submission page. -->
         <a class="publish-link" href="publish.html">Publish</a>
+        <a class="publish-link" href="investor-relations.html">Investor Relations</a>
         <a class="social" href="https://github.com/xcat-studio" target="_blank" rel="noopener noreferrer" aria-label="XCAT Studio on GitHub" title="XCAT Studio on GitHub">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.8 10.8 0 0 1 5.63 0c2.15-1.46 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg>
         </a>
@@ -115,6 +138,7 @@
     </main>
     <footer>
       <span>All rights reserved.</span>
+      <a class="deployed-commit" data-latest-commit href="https://github.com/xcat-studio/token/commits/main/" aria-live="polite">Checking latest commit…</a>
       <!-- Visible language controls; keep the original artwork unchanged. -->
       <nav class="languages" aria-label="Language">
         <button class="language-button" type="button" data-language="en" aria-label="United States — English" title="United States" aria-pressed="true"><span aria-hidden="true">🇺🇸</span></button>
@@ -155,8 +179,15 @@
       document.querySelector('.hero-copy').dir = ['ar', 'he'].includes(language) ? 'rtl' : 'ltr';
       document.getElementById('construction').textContent = copy.construction;
       document.getElementById('headline').textContent = copy.soon;
-      document.title = `XCAT Studio — ${copy.soon} 2026`;
-      document.querySelector('meta[name="description"]').content = `XCAT Studio. ${copy.soon} 2026.`;
+      const title = `XCAT Studio — ${copy.soon} 2026`;
+      const description = `XCAT Studio — Every cat has a story. ${copy.soon} 2026. Follow XCAT Studio on X, GitHub, and pump.fun for updates.`;
+      document.title = title;
+      document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach(meta => {
+        meta.content = title;
+      });
+      document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach(meta => {
+        meta.content = description;
+      });
       document.querySelectorAll('[data-language]').forEach(button => {
         button.setAttribute('aria-pressed', String(button.dataset.language === language));
       });
@@ -167,5 +198,7 @@
     });
     try { setLanguage(localStorage.getItem('xcat-language') || 'en'); } catch { setLanguage('en'); }
   </script>
+  <!-- Share the latest passing main commit lookup across all site pages. -->
+  <script src="assets/latest-commit.js" defer></script>
 </body>
 </html>

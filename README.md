@@ -2,7 +2,7 @@
 
 A responsive black-and-white website announcing **Coming Soon 2026** and providing cat story submission instructions.
 
-Open `index.html` in a browser. No build step or dependencies are required. Deploy `index.html` and `publish.html` together with the `assets` directory. The top navigation’s **Publish** link opens the dedicated submission page.
+Open `index.html` in a browser. No build step or dependencies are required. Deploy `index.html`, `publish.html`, and `investor-relations.html` together with the `assets` directory. The top navigation’s **Publish** link opens the dedicated submission page. **Investor Relations** opens the company overview, strategy, corporate contacts, and important investor information.
 
 The supplied banner and print artwork are included in `assets`. The print artwork displays in grayscale to match the theme; its original file is preserved.
 
@@ -45,3 +45,9 @@ Cat Story:
 XCAT Studio\
 [xcatstudio.com](https://xcatstudio.com/)\
 [@xcatstudio](https://x.com/xcatstudio)
+
+## Latest passing GitHub commit
+
+`assets/latest-commit.js` reads the commits on `xcat-studio/token`'s `main` branch through GitHub's public API, newest first. It selects the first commit with successful commit statuses and completed, successful check runs. Pending, failed, skipped, neutral, and unchecked commits are not selected. It paginates commits and checks as needed.
+
+Every page shows the short hash in its footer, links to the full GitHub commit, and stores the full hash in `<meta name="latest-successful-commit">` after loading. This is the latest passing GitHub commit, which can differ from the source revision of the page being viewed. API failures or rate limits show “Commit status unavailable” with a link to the commit history. No token or deployment configuration is required.
