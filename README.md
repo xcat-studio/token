@@ -14,11 +14,11 @@ The footer provides 25 country flag buttons with matching announcement translati
 
 ## XCAT Studio — Submit Your Cat Story
 
-**Every cat has a story. Tell yours.**
+**Every cat has a story. Tell it.**
 
-To submit your cat story to XCAT Studio, follow these instructions:
+To submit a cat story to XCAT Studio, follow these instructions:
 
-1. **Replace X with your cat's name.** Use the XCAT Studio image template and replace the placeholder X with your cat's name.
+1. **Replace X with the cat's name.** Use the XCAT Studio image template and replace the placeholder X with the cat's name.
 2. **Post on X.** Publish a post on [x.com](https://x.com/) featuring your cat's image and **tag @xcatstudio** in the post.
 3. **Copy your post link.** Include the direct URL to your published X post.
 4. **Write your cat's story.** Tell us your story using Unicode plain text.
