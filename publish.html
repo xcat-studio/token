@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publish a cat story with XCAT Studio. Follow the submission instructions and email the complete story to support@xcatstudio.com.">
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://xcatstudio.com/publish.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg?v=xcat">
+  <title>Publish — XCAT Studio</title>
+  <style>
+    :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; background: #080808; color: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; height: 94px; border-bottom: 1px solid #292929; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; letter-spacing: -.05em; }
+    .brand span { margin-left: 7px; font-size: 10px; font-weight: 400; letter-spacing: .25em; }
+    .socials { display: flex; align-items: center; gap: 10px; }
+    .publish-link { padding: 10px 14px; border: 1px solid #393939; border-radius: 24px; font-size: 13px; font-weight: 700; }
+    .publish-link:hover, .publish-link[aria-current="page"] { background: #fff; color: #080808; }
+    .publish-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+    .social { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #393939; border-radius: 50%; background: transparent; color: #fff; transition: background .2s, color .2s; }
+    a.social:hover { color: #080808; background: #fff; }
+    .social:focus-visible, .brand:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+    .social svg { width: 17px; height: 17px; fill: currentColor; }
+    .social img { width: 17px; height: 17px; }
+    .social:disabled { opacity: .5; cursor: default; }
+    /* Keep submission copy readable on small screens and long email subjects wrapped. */
+    .submission { padding: 48px 0 56px; font-size: 15px; line-height: 1.75; }
+    .submission h1 { margin: 0 0 16px; font-size: clamp(28px, 4vw, 44px); line-height: 1.15; letter-spacing: -.04em; }
+    .submission h2 { margin: 28px 0 12px; font-size: 19px; }
+    .submission p, .submission ol, .submission ul { max-width: 760px; }
+    .submission ol, .submission ul { padding-left: 24px; color: #b1b1b1; }
+    .submission li { margin-bottom: 12px; }
+    .submission strong { color: #fff; }
+    .submission a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+    .submission a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+    .submission code { white-space: normal; overflow-wrap: anywhere; }
+    .email-format { padding: 20px 24px; border: 1px solid #393939; background: #111; font-family: monospace; }
+    footer { padding: 24px 0 30px; border-top: 1px solid #292929; color: #858585; font: 10px/1.6 monospace; }
+    @media (max-width: 650px) {
+      .wrap { width: calc(100% - 32px); }
+      header { height: auto; min-height: 76px; flex-wrap: wrap; gap: 16px; padding: 16px 0; }
+      .socials { flex-wrap: wrap; }
+      .submission { padding: 32px 0 40px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .social { transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./" aria-label="XCAT Studio home">XCAT<span>STUDIO</span></a>
+      <nav class="socials" aria-label="Main navigation">
+        <a class="publish-link" href="publish.html" aria-current="page">Publish</a>
+        <a class="social" href="https://github.com/xcat-studio" target="_blank" rel="noopener noreferrer" aria-label="XCAT Studio on GitHub" title="XCAT Studio on GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.8 10.8 0 0 1 5.63 0c2.15-1.46 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg>
+        </a>
+        <a class="social" href="https://x.com/xcatstudio" target="_blank" rel="noopener noreferrer" aria-label="XCAT Studio on X" title="Follow @xcatstudio on X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-7.4L5.6 22H2.5l7.9-9.03L2.8 2h6.4l4.42 6.75L18.9 2Zm-1.09 18h1.72L8.27 3.9H6.43L17.81 20Z"/></svg>
+        </a>
+        <a class="social" href="https://pump.fun/profile/xcatstudio" target="_blank" rel="noopener noreferrer" aria-label="XCAT Studio on pump.fun" title="XCAT Studio on pump.fun">
+          <img src="assets/pump-logomark.svg" alt="" aria-hidden="true" width="17" height="17">
+        </a>
+      </nav>
+    </header>
+    <main>
+      <!-- Keep the submission instructions in sync with README.md. -->
+      <section class="submission" id="submit-your-cat-story" lang="en" aria-labelledby="submission-title">
+        <h1 id="submission-title">XCAT Studio — Submit Your Cat Story</h1>
+        <!-- Keep the submission tagline consistent with README.md: Every cat has a story. -->
+        <p><strong>Every cat has a story.</strong></p>
+        <p>To submit a cat story to XCAT Studio, follow these instructions:</p>
+        <ol>
+          <li><strong>Replace X with the cat's name.</strong> Use the XCAT Studio image template and replace the placeholder X with the cat's name.</li>
+          <li><strong>Post on X.</strong> Publish a post on <a href="https://x.com/">x.com</a> featuring your cat's image and <strong>tag @xcatstudio</strong> in the post.</li>
+          <li><strong>Copy your post link.</strong> Include the direct URL to your published X post.</li>
+          <li><strong>Write your cat's story.</strong> Tell us your story using Unicode plain text.</li>
+          <li><strong>Email your submission</strong> to <a href="mailto:support@xcatstudio.com"><strong>support@xcatstudio.com</strong></a> with the subject line: <code>XCAT Story Submission — [Cat's Name]</code></li>
+        </ol>
+        <h2>Email Format</h2>
+        <p class="email-format"><strong>Cat's Name:</strong><br><strong>X Post URL:</strong><br><strong>Cat Story:</strong></p>
+        <h2>Submission Requirements</h2>
+        <ul>
+          <li>Plain text only (Unicode UTF-8).</li>
+          <li>No HTML formatting.</li>
+          <li>No attachments or binary data.</li>
+          <li>The X post must include your cat's image and tag <strong>@xcatstudio</strong>.</li>
+          <li>Include the complete story directly in the email body.</li>
+        </ul>
+        <p><strong>Every cat has a story.</strong></p>
+        <p>XCAT Studio<br><a href="https://xcatstudio.com/">xcatstudio.com</a><br><a href="https://x.com/xcatstudio">@xcatstudio</a></p>
+      </section>
+    </main>
+    <footer><a href="./">Back to XCAT Studio</a></footer>
+  </div>
+</body>
+</html>
