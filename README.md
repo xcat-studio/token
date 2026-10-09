@@ -19,9 +19,9 @@ The footer provides 25 country flag buttons with matching announcement translati
 To submit a cat story to XCAT Studio, follow these instructions:
 
 1. **Replace X with the cat's name.** Use the XCAT Studio image template and replace the placeholder X with the cat's name.
-2. **Post on X.** Publish a post on [x.com](https://x.com/) featuring your cat's image and **tag @xcatstudio** in the post.
+2. **Post on X.** Publish a post on [x.com](https://x.com/) featuring cat's image and **tag @xcatstudio** in the post.
 3. **Copy your post link.** Include the direct URL to your published X post.
-4. **Write your cat's story.** Tell us your story using Unicode plain text.
+4. **Write cat's story.** Tell us your story using Unicode plain text.
 5. **Email your submission** to [**support@xcatstudio.com**](mailto:support@xcatstudio.com) with the subject line: `XCAT Story Submission — [Cat's Name]`
 
 ### Email Format
@@ -37,7 +37,7 @@ Cat Story:
 - Plain text only (Unicode UTF-8).
 - No HTML formatting.
 - No attachments or binary data.
-- The X post must include your cat's image and tag **@xcatstudio**.
+- The X post must include cat's image and tag **@xcatstudio**.
 - Include the complete story directly in the email body.
 
 **Every cat has a story.**
